@@ -67,9 +67,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    <title>The State of CSS</title>
     
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="description" content="My talk at the Web Engineering Düsseldorf Meetup in May 2018" />
     <meta name="author" content="Bartek Szopka" />
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
@@ -90,9 +90,13 @@
         
     -->
     <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 
 <!--
@@ -148,7 +152,7 @@
     to next slide after a timeout expires.
     
 -->
-<div id="impress" data-autoplay="7">
+<div id="impress" data-autoplay="70000">
 
     <!--
         
@@ -170,9 +174,6 @@
         Plugins: For first slide, set the autoplay time to a custom 10 seconds.
         
     -->
-    <div id="bored" class="step slide" data-x="-1000" data-y="-1500" data-autoplay="10">
-        <q>Aren’t you just <b>bored</b> with all those slides-based presentations?</q>
-    </div>
 
     <!--
         
@@ -189,14 +190,29 @@
         Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
         
     -->
-    <div class="step slide" data-x="0" data-y="-1500">
-        <q>Don’t you think that presentations given <strong>in modern browsers</strong> shouldn’t <strong>copy the limits</strong> of ‘classic’ slide decks?</q>
+   
+    <div class="step slide" data-x="-5000" data-y="-1500">
+        <q>Cascading<br>Style<br>Sheets</q>
+        <div style="height:40%;width:40%;float:right;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 150"><defs><style>.cls-1{fill:#0f6685;}.cls-2{fill:#fff;}.cls-3{fill:#d9423d;}</style></defs><title>WEM_Logo-Icon</title><g id="Elements"><rect class="cls-1" x="12" y="12" width="57.73" height="57.73" rx="6.81" ry="6.81"/><path class="cls-2" d="M29.64,58.13,28.58,42.74H32l.18,10.94h.17L37,42.74h2.66l.89,10.94h.17l4.09-10.94h3.43l-6.5,15.39H38.64L37.59,48h-.15L32.83,58.13Z"/><rect class="cls-1" x="81.27" y="12" width="57.73" height="57.73" rx="6.81" ry="6.81"/><path class="cls-2" d="M107.64,58.13h-10l2.71-15.39h10l-.47,2.77h-6.71l-.65,3.55h6.34l-.43,2.54h-6.34l-.7,3.75h6.74Z"/><rect class="cls-3" x="98.59" y="81.27" width="57.73" height="57.73" rx="6.81" ry="6.81"/><path class="cls-2" d="M123,112c3.91,0,6,2.48,6,6.06a10.51,10.51,0,0,1-.1,1.5c0,.25-.23,1.33-.28,1.57-.81,3.9-3.73,6.27-8.37,6.27H115L117.67,112Zm-4.33,12.62h1.35c2.67,0,4.72-1.15,5.32-3.83,0-.19.24-1.16.26-1.4a11.1,11.1,0,0,0,.07-1.17c0-2.45-1.52-3.44-3.74-3.44h-1.49Z"/></g></svg>
+        </div>
+        
+    </div> 
+    <div class="step" data-x="-3000" data-y="-1500">
+        <h1>PostCSS</h1> 
+    </div> 
+    <div class="step" data-x="-2000" data-y="-1500">
+        <h1>CSS-in-JS</h1> 
     </div>
-
-    <div class="step slide" data-x="1000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+    <div class="step" data-x="-1000" data-y="-1500">
+        <h1>BEM, ACSS, OOCSS</h1> 
     </div>
-
+    <div class="step" data-x="0" data-y="-1500">
+        <h1>CSS Modules</h1> 
+    </div>
+    <div class="step" data-x="1000" data-y="-1500">
+        <h1>CSS custom properties</h1>
+    </div>
     <!--
         
         This is an example of step element being scaled.
@@ -208,9 +224,7 @@
         
     -->
     <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+        <img src="img/andy.png">
     </div>
 
     <!--
@@ -221,14 +235,12 @@
         element should be rotated by 90 degrees clockwise.
         
     -->
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It’s a <strong>presentation tool</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="8">
+        <img src="img/helmut.png">
     </div>
 
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
+    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="0" data-scale="6">
+        <p>The State of <b>CSS</b></p>
     </div>
 
     <!--
@@ -240,8 +252,8 @@
         positioned far away from us (by 3000px).
         
     -->
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
+    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-5000" data-rotate="300" data-scale="1">
+        <p><b>business logic</b> 🤣</p>
     </div>
 
     <!--
@@ -268,23 +280,195 @@
         See src/plugins/rel/README.md for more information.
         
     -->
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-z="0" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
+    <div id="ing0" class="ing step" data-x="3500" data-y="-850" data-z="0" data-rotate="270" data-scale="6">
+        <p>by <b class="positioning">Christoph</b> <b class="rotating">@pistenprinz</b> <b class="scaling">www.creinartz.de</b></p>
     </div>
 
     <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
+        <p>There are only <b>two</b> hard things in Computer Science:</p>
     </div>
 
     <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/impress/impress.js">use the source</a>, Luke!</q>
+        <p>Cache invalidation</p>
+        <q>and naming things</q>
     </div>
 
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
+    <div id="one-more-thing" class="step" data-x="5700" data-y="4800" data-rotate="90" data-scale="6">
+        <h1>CSS Metholodigies</h1>
     </div>
 
+     <div id="BEM" class="step" data-x="10000" data-y="4000" data-scale="6">
+        <h2>Block<br>Element<br>Modifier</h2>
+    </div>
+
+    <div id="BEM3" class="step" data-x="10000" data-y="4000" data-scale="2">
+        <p>Block - Standalone entity that is meaningful on its own.</p>
+    </div>
+
+    <div id="BEM31" class="step" data-x="12000" data-y="4000" data-scale="2">
+        <p>Element
+A part of a block that has no standalone meaning and is semantically tied to its block.</p>
+    </div>
+
+    <div id="BEM32" class="step" data-x="14000" data-y="4000" data-scale="2">
+        <p>Modifier
+A flag on a block or element. Use them to change appearance or behavior.</p>
+    </div>
+
+    <div id="BEM33" class="step" data-x="16000" data-y="4000" data-scale="2" >
+            <pre>
+            <code class="css">
+.btn {}                                   
+.btn__price {}
+.btn--primary {} 
+                </code>
+            </pre>
+        </div>
+
+
+    <div id="BEM4" class="step" data-x="18000" data-y="4000" data-scale="2">
+        <img src="img/bembsp.jpg">
+        <a href="http://getbem.com">http://getbem.com/</a>
+    </div>
+
+
+    <div id="ACSS" class="step" data-x="9500" data-y="1000" data-scale="6" data-rotate="90">
+        <h1>ACSS</h1>
+    </div>
+
+   <div id="ACSS1" class="step" data-x="9500" data-y="1000" data-scale="2" >
+        <q>Atomic CSS is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function.</q>
+    </div>
+
+    <div id="ACSS2" class="step" data-x="11500" data-y="1000" data-scale="2" >
+        <pre>
+        <code class="css">
+.f1 { font-size: 3rem; }
+.ma0 { margin: 0; }
+            </code>
+        </pre>
+    </div>
+
+    <div id="ACSS3" class="step" data-x="13500" data-y="1000" data-scale="2" >
+            <pre>
+            <code class="css">
+.text-huge { font-size: 3rem; }
+.margin-0 { margin: 0; }
+            </code>
+            </pre>
+        </div>
+
+        <div id="ACSS4" class="step" data-x="15500" data-y="1000" data-scale="2" >
+                <pre>
+                <code class="html">
+&lt;p class="C(#fff) P(20px)"&gt;
+  Lorem ipsum
+&lt;/p&gt;
+                </code>
+                </pre>
+            </div>
+            <div id="ACSS5" class="step" data-x="17500" data-y="1000" data-scale="2" >
+                    <pre>
+                    <code class="css">
+.C\(#fff\) { color: #fff; }
+.P\(20px\) { padding: 20px; }
+                    </code>
+                    </pre>
+                </div>
+    <div id="ing1" class="ing step" data-x="-1000" data-y="2000" data-scale="5" data-rotate="90" >
+        <p><b class="positioning">Variables</b>  <b class="rotating">var(--myvariable)</b> </p>
+    </div>
+
+   <div id="v1" class="step" data-x="-1000" data-y="4000" data-scale="6">
+        <h1>Processing</h1>
+    </div>
+
+   <div id="v11" class="step" data-x="-1000" data-y="5500" data-scale="6">
+        <code>npm i node-sass<code>
+    </div>
+
+    <div id="v2" class="step" data-x="1000" data-y="5500" data-scale="3">
+        <img src="img/sassvar.png">
+    </div>
+
+    <div id="v3" class="step" data-x="1000" data-y="7000">
+        <img src="img/cssvar1.png">
+    </div>
+
+    <div id="v4" class="step" data-x="1000" data-y="8500">
+        <img src="img/cssvar2.png">
+    </div>
+
+    <div id="v5" class="step" data-x="4000" data-y="5500" data-scale="3">
+        <pre><code class="js">getComputedStyle
+(document.documentElement) 
+.getPropertyValue
+('--mycolour');</code></pre>
+    </div>
+
+    <div id="pc1" class="step" data-x="4000" data-y="7500" data-scale="3" data-rotate="180">
+        <h1>PostCSS</h1>
+    </div>
+
+    <div id="pc2" class="step" data-x="4000" data-y="9500" data-scale="3" data-rotate="180">
+        <p>A tool for transforming CSS with JavaScript</p>
+    </div>
+
+    <div id="pc3" class="step" data-x="4000" data-y="11500" data-scale="3" data-rotate="180">
+        <h1>Autoprefixer</h1>
+        <a href="https://autoprefixer.github.io/">Autoprefixer online</a>
+    </div>
+
+    <div id="pc4" class="step" data-x="4000" data-y="13500" data-scale="3" data-rotate="180">
+        <h1>RTLCSS</h1>
+        <a href="http://rtlcss.com/playground/">RTLCSS playground</a>
+    </div>
+
+
+    <div id="cm1" class="step" data-x="-3600" data-y="1000" data-scale="2">
+        <img src="img/css-modules-logo.png">
+    </div>
+
+    <div id="cm2" class="step" data-x="-5600" data-y="1000" data-scale="2">
+        <h1>Demo time</h1>
+    </div>
+
+    <div id="cb1" class="step" data-x="-5600" data-y="3000" data-scale="4" data-rotate="180">
+        <h1>CSS Blocks</h1>
+    </div>
+
+    <div id="cb2" class="step" data-x="-5600" data-y="5000" data-scale="2" data-rotate="180">
+        <p>The next evolution of best practices?</p>
+        <a href="https://css-blocks.com/">css-blocks.com</a>
+    </div>
+
+    
+    <div id="build" class="step" data-x="10000" data-y="6000" data-scale="2">
+        <h1>the buildstack<sub>(TM)</sub></h1>
+    </div>
+
+    <div id="build2" class="step" data-x="12500" data-y="6000" data-scale="2">
+            <h1>CSS? webpack!</h1>
+        </div>
+
+    <div id="build3" class="step" data-x="15000" data-y="6000" data-scale="2">
+            <img src="img/andy.png">
+    </div>
+
+    <div id="build4" class="step" data-x="17500" data-y="6000" data-scale="2">
+         <p>BEM, ACSS, Autoprefixer, RTLCSS, CSSnano</p>
+    </div>
+    
+
+    <div id="other" class="step" data-x="17500" data-y="9000" data-rotate="180" data-scale="2">
+            <h1>Critical CSS</h1>
+       </div>
+
+    <div id="spec1" class="step" data-x="15000" data-y="9000" data-rotate="180" data-scale="2">
+            <h1>CSS Grid</h1>
+       </div>
+
+    
     <!--
         
         And the last one shows full power and flexibility of impress.js.
@@ -297,9 +481,14 @@
         as `data-rotate` (these two are basically aliases).
         
     -->
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it’s</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
+   
+    <div id="its-in-3d" class="step" data-x="4000" data-y="3500" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="4">
+        <p>
+            <b>Thank you!</b>
+           <!-- <span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it’s</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
+        <span class="footnote">* beat that, prezi ;)</span>-->
+
+        </p>
     </div>
 
     <!--
